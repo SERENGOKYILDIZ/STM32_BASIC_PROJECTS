@@ -1,2 +1,2 @@
 # STM32_BASIC_PROJECTS
-I have a lot of projetcs.
+I have a lot of projetcs
