@@ -1,2 +1,2 @@
-# STM32_BASIC_PROJECTS
-I have a lot of projetcs
+# MY STM32 BASIC PROJECTS
+All the projects I learned about STM32.
