@@ -52,7 +52,10 @@ uint16_t Read_ADC()
 
 	while(ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC) == RESET);                       //->Wait End of conversion flag.
 
-	return ADC_GetConversionValue(ADC1);                                         //->Return the value of ADC.
+	return ADC_GetConversionValue(ADC1) >> 4;                                    //->Return the value of ADC.
+	/*
+	 * @brief We did shift 4 bits to the right. Because we read 0xff0 to the adc.
+	 * */
 }
 int main(void)
 {
@@ -63,7 +66,7 @@ int main(void)
 	while (1)
 	{
 		adc_value = Read_ADC();
-		adc_voltage = (0.00005035477) * adc_value;
+		adc_voltage = (0.0008058608) * adc_value;
 		if(adc_voltage < 0.5)
 		{
 			GPIO_ResetBits(GPIOD, GPIO_Pin_12);
