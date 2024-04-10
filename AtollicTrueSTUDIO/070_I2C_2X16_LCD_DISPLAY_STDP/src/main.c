@@ -2,6 +2,7 @@
 #include "stm32f4_discovery.h"
 
 #include "i2c-lcd.h"
+
 uint8_t m_address = 0x4e;
 
 void GPIO_Config()
@@ -58,14 +59,14 @@ int main(void)
 {
 	GPIO_Config();
 	I2C_Config();
-	int i;
+	lcd_init();
 	while (1)
 	{
 		lcd_send_cmd(0x80);
 		lcd_sende_string("Semi Eren");
 		delay(63000000);
 		lcd_send_cmd(0xc3);
-		lcd_sende_string("Gökyıldız");
+		lcd_sende_string("Gokyildiz");
 		delay(63000000);
 		lcd_send_cmd(0x01);
 		delay(2100000);

@@ -2,7 +2,7 @@
  * i2c-lcd.h
  *
  *  Created on: 26 Eyl 2019
- *      Author: SEMİ EREN GÖKYILDIZ
+ *      Author: ATSON
  */
 #include "stm32f4xx.h"
 

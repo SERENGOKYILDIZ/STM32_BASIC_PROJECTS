@@ -65,16 +65,16 @@ int main(void)
 {
 	GPIO_Config();
 	I2C_Config();
-	int i;
+	int count = 0;
 	while (1)
 	{
 		if(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_0))
 		{
 			while(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_0));
-			i++;
+			count++;
 			delay(168000);
 		}
-		switch(i)
+		switch(count)
 		{
 			case 0:
 			I2C_Write(m_address, 0x00);
@@ -113,7 +113,7 @@ int main(void)
 			break;
 
 			default:
-			i = 0;
+			count = 0;
 			break;
 		}
 	}
