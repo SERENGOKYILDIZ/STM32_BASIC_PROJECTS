@@ -1,5 +1,14 @@
 # https://github.com/github/gitignore/blob/master/C.gitignore
 
+.metadata/
+.settings/
+Debug/
+.project
+.cproject
+.mxproject
+*.launch
+*.ld
+
 # Prerequisites
 *.d
 
